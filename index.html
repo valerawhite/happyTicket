@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Счастливый билет</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+    </script>
+    <script src="scripts/index.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: linear-gradient(to top, #ffbf00, #ffa500c2);
+            height: 100vh;
+        }
+        .main, form, .wrap_input {
+            display: flex;
+        }
+        .main {
+            justify-content: center;
+        }
+        form {
+            border: 1px solid white;
+            height: auto;
+            min-height: 80px;
+            width: 40vw;
+            min-width: 220px;
+            margin-top: 150px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px;
+            align-items: end;
+        }
+
+        .wrap_input_submit {
+            width: 10% !important;
+        }
+
+        .wrap_input_submit input {
+            background: #f6ebeb;
+            border: 2px solid #969696;
+            height: 43px !important;
+            text-align: center !important;
+        }
+        .wrap_input {
+            flex-wrap: wrap;
+            width: 40%;
+            min-width: 185px;
+        }
+        .wrap_input label:nth-child(1), .wrap_input input:nth-child(2), .wrap_input_submit input {
+            width: 100%;
+        }
+        .wrap_input input:nth-child(2), .wrap_input_submit input {
+            height: 40px;
+            border-radius: 5px;
+            padding: 0 2px 0 2px;
+            margin-bottom: 6px;
+            text-align: right;
+        }
+        .number_ticket_bold {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .not-valid {
+            border: 2px solid red;
+        }
+        .error {
+            color: red;
+        }
+        @media screen and (max-width: 1050px) {
+            .wrap_input, .wrap_input_submit, .wrap_input_submit input {
+                width: 100% !important;
+            }
+            .wrap_input_submit {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="wrap_main_info">
+            <form id="Ticketform">
+                <div class="wrap_input">
+                    <label for="from">N - from</label><input type="text" id="from" maxlength="6" name="min" placeholder="Введите значение">
+                </div>
+                <div class="wrap_input">
+                    <label for="to">N - to</label><input type="text" id="to" maxlength="6" name="max" placeholder="Введите значение">
+                </div>
+                <div class="wrap_input_submit">
+                    <input type="button" name="submit" value="Run" id="submit">
+                </div>
+                <div class="result">
+                    <span class="number_ticket_bold"> Number of tickets: <span id="result">XXX</span></span>
+                </div>
+                <span class="error"></span>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
